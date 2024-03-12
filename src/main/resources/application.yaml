@@ -1,0 +1,41 @@
+server:
+  servlet:
+    context-path: /payment-api
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:db_payment_api
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    defer-datasource-initialization: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+
+swagger:
+  api:
+    description: API para Gerenciamento de Pagamentos
+    title: Payment Api
+    version: 1.0
+    contact:
+      name: Bruno Fernandes
+      url: https://github.com/bfcarval
+      email: bruno@algo.com
+  host: http://localhost:8080
+  base:
+    path: /payment-api
+    package: com.payment.api.controller
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  packages-to-scan: com.payment.api.controller
