@@ -38,4 +38,4 @@ swagger:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
-  packages-to-scan: com.payment.api.controller
+  packages-to-scan: com.payment.api.web.controller
