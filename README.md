@@ -1,8 +1,8 @@
-# Payment API
+# Expense API
 
-### Swagger: http://localhost:8080/payment-api/swagger-ui/index.html
-### H2: http://localhost:8080/payment-api/h2-console
-    --> JDBC URL: jdbc:h2:mem:db_payment_api
+### Swagger: http://localhost:8080/expense-api/swagger-ui/index.html
+### H2: http://localhost:8080/expense-api/h2-console
+    --> JDBC URL: jdbc:h2:mem:db_expense_api
 
 ### Postman Collection:
 
