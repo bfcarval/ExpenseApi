@@ -8,7 +8,8 @@ import com.expense.api.service.dto.ExpenseReportDTO
 import com.expense.api.service.mapper.toDTO
 import com.expense.api.service.mapper.toEntity
 import com.expense.api.service.mapper.toUpdate
-import com.expense.api.util.CalculatorUtil.Companion.calculateAverageExpense
+import com.expense.api.util.CalculatorUtil.Companion.findAverageSpend
+import com.expense.api.util.CalculatorUtil.Companion.findBiggerSpend
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 
@@ -52,17 +53,12 @@ class ExpenseService(private val expenseDAO: ExpenseDAO) {
             val expenseConverted = it.map(ExpenseEntity::toDTO).toMutableList()
 
             ExpenseReportDTO(
-                averageExpense = calculateAverageExpense(expenseAmounts),
-                biggerExpense = findBiggerExpense(expenseConverted),
+                averageSpend = findAverageSpend(expenseAmounts),
+                biggerSpend = findBiggerSpend(expenseConverted),
                 initialDateTime = initialDatetime,
                 endDateTime = endDatetime,
                 expenses = expenseConverted
             )
         }
-    }
-
-    private fun findBiggerExpense(expenses: MutableList<ExpenseDTO>): ExpenseDTO {
-        expenses.sortByDescending { it.amount }
-        return expenses.first()
     }
 }

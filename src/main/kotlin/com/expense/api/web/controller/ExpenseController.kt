@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController
 import java.time.LocalDateTime
 
 @RestController
-@RequestMapping("/expenses")
+@RequestMapping("/expenses/v1")
 @Tag(name = "Expense", description = "Expense Manager")
 @Api(description = "API Expense Manager", tags = [("Expense API - Gerenciar Gastos")])
 class ExpenseController(private val expenseService: ExpenseService) {

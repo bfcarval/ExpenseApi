@@ -5,8 +5,8 @@ import com.expense.api.web.model.response.ExpenseReportResponse
 
 
 fun ExpenseReportDTO.toResponse() = ExpenseReportResponse(
-    biggerExpense = biggerExpense?.toResponse(),
-    averageExpense = "R$ $${averageExpense.toString().replace(".",",")}",
+    biggerSpend = biggerSpend?.toResponse(),
+    averageSpend = "R$ ${averageSpend.toString().replace(".",",")}",
     endDateTime = endDateTime.toString(),
     initialDateTime = initialDateTime.toString(),
     expenses = expenses?.map { it.toResponse()}?.toMutableList() ?: mutableListOf(),

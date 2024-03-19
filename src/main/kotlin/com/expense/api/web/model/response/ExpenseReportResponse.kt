@@ -5,10 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty
 data class ExpenseReportResponse(
 
     @get:JsonProperty("gasto_medio_dia")
-    val averageExpense: String? = null,
+    val averageSpend: String? = null,
 
     @get:JsonProperty("maior_gasto_dia")
-    val biggerExpense: ExpenseResponse? = null,
+    val biggerSpend: ExpenseResponse? = null,
 
     @get:JsonProperty("data_inicial")
     val initialDateTime: String? = null,

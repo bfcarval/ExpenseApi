@@ -28,5 +28,5 @@ class ExpenseDAO(private val expenseRepository: ExpenseRepository) {
 
     @Transactional(propagation = Propagation.SUPPORTS)
     fun findByDates(initialDateTime: LocalDateTime, endDatetime: LocalDateTime): MutableList<ExpenseEntity> =
-        expenseRepository.findByBetweenDates(initialDateTime, endDatetime)
+        expenseRepository.findByCreatedDateGreaterThanEqualAndCreatedDateLessThanEqual(initialDateTime, endDatetime)
 }
